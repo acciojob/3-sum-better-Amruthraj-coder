@@ -1,10 +1,16 @@
 function threeSum(arr, target) {
 // write your code here
-	var sum=0;
-	for(var i=0;i<3;i++)
-		{
-			sum+=arr[i];
+	var sum=10000000;
+	var n = arr.length;
+	for(var i=0; i<n; i++){
+		for(var j=i+1; j<n; j++){
+			for(var k=j+1; j<n; j++){
+				if(abs(arr[i]+arr[j]+arr[j]-target)<sum){
+					sum = arr[i]+arr[j]+arr[k];
+				}
+			}
 		}
+	}
   return sum;
 }
 
